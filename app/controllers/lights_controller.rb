@@ -8,4 +8,6 @@ class LightsController < ApplicationController
   def show
     @light = Light.first
   end
+
+  
 end
