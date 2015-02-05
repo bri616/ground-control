@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  root 'lights#show'
+
+  post 'lights/toggle_active', to: 'lights#toggle_active', as: :toggle_lights
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
