@@ -9,5 +9,9 @@ class LightsController < ApplicationController
     @light = Light.first
   end
 
-  
+  def status
+    @light = Light.first
+    render json: {status: @light.is_active}
+  end
+
 end
