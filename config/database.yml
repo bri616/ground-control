@@ -80,6 +80,6 @@ test:
 #
 production:
   <<: *default
-  database: bfi-teleporter_production
-  username: bfi-teleporter
+  database: ground-control
+  username: ubuntu
   password: <%= ENV['BFI-TELEPORTER_DATABASE_PASSWORD'] %>
