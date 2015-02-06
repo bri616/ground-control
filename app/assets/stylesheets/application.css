@@ -14,10 +14,29 @@
  *= require_self
  */
 
- .navbar {
-   height: 250px;
+ .navbar-fixed-top {
+     min-height: 80px;
+ }
+
+ .navbar-nav > li > a {
+     padding-top: 0;
+     padding-bottom: 0;
+     line-height: 80px;
+ }
+
+ @media(max-width: 767px) {
+     .navbar-nav > li > a {
+     line-height: 20px;
+     padding-top: 10px;
+     padding-bottom: 10px;
+     }
+
+     .navbar-collapse {
+       border-top: 0;
+       margin-top: 20px;
+     }
  }
 
  body {
-   padding-top: 250px;
+   padding-top: 100px;
  }
