@@ -19,7 +19,7 @@ server 'http://54.148.48.242/',
   user: 'ubuntu',
   roles: %w{web app db},
   ssh_options: {
-    keys: %w(/Users/Brigid/.ssh/[pem file name].pem),
+    keys: %w(/Users/Brigid/.ssh/ec2-ground-control.pem),
     forward_agent: false,
     auth_methods: %w(publickey)
   }
