@@ -30,7 +30,6 @@ group :development do
   gem 'capistrano-rvm'
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
-  
 end
 
 gem 'therubyracer', platforms: :ruby
