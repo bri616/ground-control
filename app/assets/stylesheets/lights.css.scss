@@ -1,3 +1,19 @@
 // Place all the styles related to the lights controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.btn-turn-off {
+  background:url(off-button.png) no-repeat;
+  cursor:pointer;
+  width: 300px;
+  height: 300px;
+  border: none;
+}
+
+.btn-turn-on {
+  background:url(on-button.png) no-repeat;
+  cursor:pointer;
+  width: 300px;
+  height: 300px;
+  border: none;
+}
