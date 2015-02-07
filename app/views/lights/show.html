@@ -1,1 +1,11 @@
-<%= button_to "some text", toggle_lights_path, class: @light.is_active ? "btn btn-turn-off" : "btn btn-turn-on"  %>
+<div class="text-center">
+  The lights are currently
+  <span class="<%= @light.is_active ? 'lights-on' : 'lights-off' %>">
+    <%= @light.is_active ? 'ON' : 'OFF'  %>
+  </span>
+  <p>
+    Toggle them below:
+  </p>
+</div>
+
+<%= button_to @light.is_active ? 'TURN OFF' : 'TURN ON', toggle_lights_path, class: @light.is_active ? "btn btn-toggle-lights btn-turn-off" : "btn btn-toggle-lights btn-turn-on"  %>

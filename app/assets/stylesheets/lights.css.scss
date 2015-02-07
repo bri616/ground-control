@@ -4,16 +4,28 @@
 
 .btn-turn-off {
   background:url(off-button.png) no-repeat;
-  cursor:pointer;
-  width: 300px;
-  height: 300px;
-  border: none;
 }
 
 .btn-turn-on {
   background:url(on-button.png) no-repeat;
+}
+
+.btn-toggle-lights {
   cursor:pointer;
   width: 300px;
   height: 300px;
   border: none;
+  line-height: 320px;
+  color: white;
+  font-weight: bold;
+}
+
+.lights-on {
+  color: #2E5339;
+  font-weight: bold;
+}
+
+.lights-off {
+  color: #F72C25;
+  font-weight: bold;
 }
