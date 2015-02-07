@@ -2,14 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.btn-turn-off {
-  background:url(off-button.png) no-repeat;
-}
-
-.btn-turn-on {
-  background:url(on-button.png) no-repeat;
-}
-
 .btn-toggle-lights {
   cursor:pointer;
   width: 300px;
@@ -18,6 +10,14 @@
   line-height: 320px;
   color: white;
   font-weight: bold;
+}
+
+.btn-turn-off {
+  background:url('off-button.png') no-repeat;
+}
+
+.btn-turn-on {
+  background:url('on-button.png') no-repeat;
 }
 
 .lights-on {
