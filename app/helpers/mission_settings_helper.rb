@@ -1,0 +1,2 @@
+module MissionSettingsHelper
+end
