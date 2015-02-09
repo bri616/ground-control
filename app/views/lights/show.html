@@ -1,11 +1,35 @@
-<div class="text-center">
-  The lights are currently
-  <span class="<%= @light.is_active ? 'lights-on' : 'lights-off' %>">
-    <%= @light.is_active ? 'ON' : 'OFF'  %>
-  </span>
-  <p>
-    Toggle them below:
-  </p>
-</div>
+<div class="row">
+  <div class="col-md-4 light-switch">
 
-<%= button_to "", toggle_lights_path, class: @light.is_active ? "btn-toggle-lights btn-turn-off" : "btn-toggle-lights btn-turn-on"  %>
+    <div class="text-center">
+      The lights are currently
+      <span class="<%= @light.is_active ? 'lights-on' : 'lights-off' %>">
+        <%= @light.is_active ? 'ON' : 'OFF'  %>
+      </span>
+      <p>
+        Toggle them below:
+      </p>
+    </div>
+    <%= button_to "", toggle_lights_path, class: @light.is_active ? "btn-toggle-lights btn-turn-off" : "btn-toggle-lights btn-turn-on"  %>
+  </div><!-- /light-switch -->
+  <div class="col-md-4 sound-switch">
+    <div class="text-center">
+      Sound control
+      <p>
+        Not yet implemented
+      </p>
+    </div>
+    <div class="btn-toggle-sound">
+    </div>
+  </div>
+  <div class="col-md-4 reboot-button">
+    <div class="text-center">
+      Reboot button
+      <p>
+        Not yet implemented
+      </p>
+    </div>
+    <div class="btn-reboot-button">
+    </div>
+  </div>
+</div> <!-- /row -->
