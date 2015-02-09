@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  root 'lights#show'
+  root 'state_settings#show'
 
-  post 'lights/toggle_active', to: 'lights#toggle_active', as: :toggle_lights
+  post 'state_settings/toggle_lights', to: 'state_settings#toggle_lights', as: :toggle_lights
 
-  get "lights/status", to: "lights#status"
+  # get "lights/status", to: "lights#status"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
