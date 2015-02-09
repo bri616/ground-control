@@ -8,3 +8,4 @@
 
 Teleporter.create(name:"bfi-dev", uid:"826dev", description:"Development version of BFI Teleporter")
 Teleporter.first.create_state_setting(lights_on:false)
+Teleporter.first.create_mission_setting(light_directive:"rainbow")
