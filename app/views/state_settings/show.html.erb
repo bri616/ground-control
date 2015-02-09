@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-md-4 light-switch">
 
-    <div class="text-center">
+    <div class="text-center light-status">
       The lights are currently
       <span class="<%= @lights_on ? 'lights-on' : 'lights-off' %>">
         <%= @lights_on ? 'ON' : 'OFF'  %>
@@ -10,7 +10,7 @@
         Toggle them below:
       </p>
     </div>
-    <%= button_to "", toggle_lights_path, class: @lights_on ? "btn-toggle-lights btn-turn-off" : "btn-toggle-lights btn-turn-on"  %>
+    <%= button_to "", toggle_lights_path(current_teleporter.uid), class: @lights_on ? "btn-toggle-lights btn-turn-off" : "btn-toggle-lights btn-turn-on"  %>
   </div><!-- /light-switch -->
   <div class="col-md-4 sound-switch">
     <div class="text-center">
