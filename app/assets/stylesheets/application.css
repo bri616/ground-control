@@ -24,7 +24,24 @@
      line-height: 80px;
  }
 
- @media(max-width: 767px) {
+ .navbar-brand {
+   font-family: 'Orbitron', sans-serif;
+   font-size: 32pt;
+ }
+
+ @media(max-width: 1200px) {
+   .navbar-brand {
+     font-size: 20pt;
+   }
+ }
+
+ @media(max-width: 1000px) {
+   .navbar-brand {
+     font-size: 15pt;
+   }
+ }
+
+ @media(max-width: 967px) {
      .navbar-nav > li > a {
      line-height: 20px;
      padding-top: 10px;
@@ -34,6 +51,10 @@
      .navbar-collapse {
        border-top: 0;
        margin-top: 20px;
+     }
+
+     .navbar-brand {
+       font-size: 14pt;
      }
  }
 
