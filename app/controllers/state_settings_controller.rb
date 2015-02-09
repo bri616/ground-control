@@ -10,6 +10,11 @@ class StateSettingsController < ApplicationController
     render :show
   end
 
+  def state_settings
+    teleporter = Teleporter.find_by(uid: params[:uid])
+    render json: {state_settings: teleporter.state_setting}
+  end
+
   private
 
   def current_teleporter

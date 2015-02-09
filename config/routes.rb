@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   post 'state_settings/toggle_lights', to: 'state_settings#toggle_lights', as: :toggle_lights
 
-  # get "lights/status", to: "lights#status"
+  get "state_settings/:uid", to: "state_settings#state_settings"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
