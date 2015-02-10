@@ -1,4 +1,13 @@
 class StateSettingsController < ApplicationController
+  skip_before_filter :logged_in, only: :landing
+
+  def landing
+    if current_user
+      redirect_to root_path
+    else
+      render :layout => false
+    end
+  end
 
   def show
     @lights_on = current_teleporter.state_setting.lights_on

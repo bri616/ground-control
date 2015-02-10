@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
+
   root "state_settings#show"
   post ":uid/state_settings/toggle_lights", to: 'state_settings#toggle_lights', as: :toggle_lights
+  get "/lift_off",  to: "state_settings#landing",     as: :landing_page
 
   # API routes for pi to use
   get ":uid/state_settings", to: "state_settings#state_settings"
