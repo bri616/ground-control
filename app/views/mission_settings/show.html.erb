@@ -1,0 +1,11 @@
+<%= @current_user.rank %>
+<p>
+  <%= @current_teleporter.name %>
+</p>
+<p>
+  <%= @mission_setting.light_directive %>
+</p>
+<%= form_for @mission_setting do |f| %>
+  <%= f.select :light_directive, options_for_select(@light_directive_list, @mission_setting.light_directive)%>
+  <%= f.submit "Update" %>
+<% end %>

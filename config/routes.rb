@@ -1,10 +1,17 @@
 Rails.application.routes.draw do
 
-  root "state_settings#show"
-  post ":uid/state_settings/toggle_lights", to: 'state_settings#toggle_lights', as: :toggle_lights
-  post ":uid/state_settings/toggle_sound", to: 'state_settings#toggle_sound', as: :toggle_sound
-  get "/lift_off",                          to: "state_settings#landing",       as: :landing_page
-  post "/lift_off/auth",                    to: "users#authenticate",           as: :authenticate_user
+  root  "state_settings#show"
+  post  ":uid/state_settings/toggle_lights", to: 'state_settings#toggle_lights', as: :toggle_lights
+  post  ":uid/state_settings/toggle_sound",  to: 'state_settings#toggle_sound',  as: :toggle_sound
+  get   "/lift_off",                         to: "state_settings#landing",       as: :landing_page
+  post  "/lift_off/auth",                    to: "users#authenticate",           as: :authenticate_user
+
+  get   "mission_control",                   to: "mission_settings#show",        as: :mission_setting
+  get   "state_control",                     to: "state_settings#show",          as: :state_setting
+  post  "mission_control",                   to: "mission_settings#update"
+  patch "mission_control",                   to: "mission_settings#update"
+  put   "mission_control",                   to: "mission_settings#update"
+
 
   # API routes for pi to use
   get ":uid/state_settings",                to: "state_settings#state_settings"
