@@ -21,7 +21,7 @@ class StateSettingsController < ApplicationController
   end
 
   def toggle_sound
-    current_teleporter.state_setting.toggle_lights
+    current_teleporter.state_setting.toggle_sound
     @sound_on = current_teleporter.state_setting.sound_on
     render json: { lights_on: @sound_on }
   end
