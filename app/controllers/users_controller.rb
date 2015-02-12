@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  skip_before_filter :logged_in, only: :authenticate
+  skip_before_filter :logged_in, :current_teleporter, only: :authenticate
 
   def authenticate
     params.permit(:rank, :password)
