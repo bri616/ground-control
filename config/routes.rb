@@ -2,11 +2,14 @@ Rails.application.routes.draw do
 
   root "state_settings#show"
   post ":uid/state_settings/toggle_lights", to: 'state_settings#toggle_lights', as: :toggle_lights
-  get "/lift_off",  to: "state_settings#landing",     as: :landing_page
+  post ":uid/state_settings/toggle_sound", to: 'state_settings#toggle_sound', as: :toggle_sound
+  get "/lift_off",                          to: "state_settings#landing",       as: :landing_page
+  post "/lift_off/auth",                    to: "users#authenticate",           as: :authenticate_user
 
   # API routes for pi to use
-  get ":uid/state_settings", to: "state_settings#state_settings"
-  get ":uid/mission_settings", to: "mission_settings#mission_settings"
+  get ":uid/state_settings",                to: "state_settings#state_settings"
+  get ":uid/mission_settings",              to: "mission_settings#mission_settings"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

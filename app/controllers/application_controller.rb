@@ -5,11 +5,8 @@ class ApplicationController < ActionController::Base
   before_filter :logged_in
   helper :all
 
-  private
-
   def current_user
-    # @current_user ||= User.find_by(id: session[:user_id])
-    @current_user = nil
+    @current_user ||= User.find_by(id: session[:user_id])
   end
 
   def logged_in
@@ -19,6 +16,7 @@ class ApplicationController < ActionController::Base
   end
 
   def current_teleporter
-    @teleporter = Teleporter.find_by(uid:"826dev")
+    @current_teleporter ||= @current_user.teleporter
   end
+
 end

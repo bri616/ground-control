@@ -10,17 +10,20 @@
         Toggle them below:
       </p>
     </div>
-    <%= button_to "", toggle_lights_path(current_teleporter.uid), class: @lights_on ? "btn-toggle-lights btn-turn-off" : "btn-toggle-lights btn-turn-on"  %>
+    <%= button_to "", toggle_lights_path(@current_teleporter.uid), class: @lights_on ? "btn-toggle-lights btn-turn-off" : "btn-toggle-lights btn-turn-on"  %>
   </div><!-- /light-switch -->
   <div class="col-md-4 sound-switch">
-    <div class="text-center">
-      Sound control
+    <div class="text-center sound-status">
+      The sounds are currently
+      <span class="<%= @sound_on ? 'sound-on' : 'sound-off' %>">
+        <%= @sound_on ? 'ON' : 'OFF'  %>
+      </span>
       <p>
-        Not yet implemented
+        Toggle them below:
       </p>
-      <button class="btn-toggle-sound"></button>
     </div>
-  </div>
+    <%= button_to "", toggle_sound_path(@current_teleporter.uid), class: @sound_on ? "btn-toggle-sound btn-turn-off-sound" : "btn-toggle-sound btn-turn-on-sound"  %>
+  </div><!-- /sound switch -->
   <div class="col-md-4 reboot-button">
     <div class="text-center">
       Reboot button

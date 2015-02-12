@@ -29,12 +29,29 @@
 }
 
 .btn-toggle-sound {
-  background: image-url('inactive-switch.png') no-repeat;
-  cursor: default;
+  cursor:pointer;
   width: 238px;
   height: 337px;
   border: none;
   outline: none;
+}
+
+.btn-turn-off-sound {
+  background: image-url('on-switch-sound.png') no-repeat;
+}
+
+.btn-turn-on-sound {
+  background: image-url('off-switch-sound.png') no-repeat;
+}
+
+.sound-on {
+  color: #2E5339;
+  font-weight: bold;
+}
+
+.sound-off {
+  color: #F72C25;
+  font-weight: bold;
 }
 
 .btn-reboot-button {

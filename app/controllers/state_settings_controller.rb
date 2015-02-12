@@ -1,5 +1,5 @@
 class StateSettingsController < ApplicationController
-  skip_before_filter :logged_in, only: :landing
+  skip_before_filter :logged_in, only: [:landing, :state_settings]
 
   def landing
     if current_user
@@ -11,12 +11,19 @@ class StateSettingsController < ApplicationController
 
   def show
     @lights_on = current_teleporter.state_setting.lights_on
+    @sound_on = current_teleporter.state_setting.sound_on
   end
 
   def toggle_lights
     current_teleporter.state_setting.toggle_lights
     @lights_on = current_teleporter.state_setting.lights_on
     render json: { lights_on: @lights_on }
+  end
+
+  def toggle_sound
+    current_teleporter.state_setting.toggle_lights
+    @sound_on = current_teleporter.state_setting.sound_on
+    render json: { lights_on: @sound_on }
   end
 
   def state_settings
