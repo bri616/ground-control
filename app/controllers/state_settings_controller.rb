@@ -1,5 +1,5 @@
 class StateSettingsController < ApplicationController
-  skip_before_filter :logged_in, only: [:landing, :state_settings]
+  skip_before_filter :logged_in, :current_teleporter, only: [:landing, :state_settings]
 
   def landing
     if current_user
