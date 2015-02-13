@@ -11,10 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150211012226) do
+ActiveRecord::Schema.define(version: 20150213002759) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "log_entries", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.boolean  "sound_on"
+    t.boolean  "lights_on"
+    t.string   "light_directive"
+  end
 
   create_table "mission_settings", force: true do |t|
     t.string   "light_directive"

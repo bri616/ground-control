@@ -7,11 +7,10 @@ class UsersController < ApplicationController
         if login_attempt.authenticate(params[:password])
           session[:user_id] = login_attempt.id
         else
-          raise "wrong password"
+          raise "Wrong password"
         end
-        # raise @current_user.inspect
       else
-        raise "a different error"
+        raise "Sorry, something went wrong"
       end
     redirect_to root_path
   end
