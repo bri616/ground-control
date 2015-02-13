@@ -1,3 +1,5 @@
 <%= line_chart @current_teleporter.log_entries.group_by_hour(:created_at).count %>
 
 <%= line_chart @current_teleporter.log_entries.where(lights_on: true).group_by_hour(:created_at).count %>
+
+<%= @city %>, <%= @country %>
