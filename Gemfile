@@ -15,6 +15,9 @@ gem 'coffee-rails', '~> 4.0.0'
 gem "chartkick"
 gem 'groupdate'
 
+# geocoder
+gem 'geocoder'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder

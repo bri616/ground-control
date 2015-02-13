@@ -59,6 +59,7 @@ GEM
     diff-lcs (1.2.5)
     erubis (2.7.0)
     execjs (2.2.2)
+    geocoder (1.2.7)
     groupdate (2.4.0)
       activesupport (>= 3)
     hike (1.2.3)
@@ -165,6 +166,7 @@ DEPENDENCIES
   capistrano-rvm
   chartkick
   coffee-rails (~> 4.0.0)
+  geocoder
   groupdate
   jbuilder (~> 2.0)
   jquery-rails
