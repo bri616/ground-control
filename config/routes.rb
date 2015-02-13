@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   patch "mission_control",                   to: "mission_settings#update"
   put   "mission_control",                   to: "mission_settings#update"
 
-  get   "log_entry",                         to: "log_entries#show"
+  get   "stats",                             to: "log_entries#show",             as: :stats
 
 
   # API routes for pi to use
