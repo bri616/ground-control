@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20150213002759) do
   create_table "log_entries", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "teleporter_id"
     t.boolean  "sound_on"
     t.boolean  "lights_on"
     t.string   "light_directive"
