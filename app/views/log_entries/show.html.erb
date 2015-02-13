@@ -1,5 +1,12 @@
-<%= line_chart @current_teleporter.log_entries.group_by_hour(:created_at).count %>
+<h2>All Missions<h2>
+<%= line_chart @current_teleporter.missions_per_hour %>
+<h2>Successful Missions<small>(lights on)</small></h2>
+<%= line_chart @current_teleporter.successful_missions_per_hour %>
 
-<%= line_chart @current_teleporter.log_entries.where(lights_on: true).group_by_hour(:created_at).count %>
+<h2>Destination stats:</h2>
 
-<%= @city %>, <%= @country %>
+<% @current_teleporter.pattern_list.each do |pattern| %>
+<p>
+  <%= pattern.titlecase + ': ' + @current_teleporter.successful_mission_count(pattern).to_s  %>
+</p>
+<% end %>
