@@ -20,6 +20,6 @@ class MissionSettingsController < ApplicationController
   end
 
   def light_directive_list
-    @light_directive_list = ["oz", "mars", "batcave"]
+    @light_directive_list = ["oz", "mars", "batcave", "seattle"]
   end
 end
