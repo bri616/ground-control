@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   patch "mission_control",                   to: "mission_settings#update"
   put   "mission_control",                   to: "mission_settings#update"
 
+  get   "log_entry",                         to: "log_entries#show"
+
 
   # API routes for pi to use
   get ":uid/state_settings",                to: "state_settings#state_settings"
