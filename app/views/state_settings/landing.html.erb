@@ -6,6 +6,7 @@
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application'  %>
   <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 </head>
 <body class="landing-page">
 
@@ -22,8 +23,7 @@
             <fieldset>
               <div class="row">
                 <div class="center-block">
-                  <img class="profile-img"
-                    src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120" alt="">
+                  <%= image_tag("rocket.png", :class => "profile-img") %>
                 </div>
               </div>
               <div class="row">
