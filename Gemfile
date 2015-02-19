@@ -15,6 +15,9 @@ gem 'coffee-rails', '~> 4.0.0'
 gem "chartkick"
 gem 'groupdate'
 
+# highcharts
+gem 'lazy_high_charts'
+
 # geocoder
 gem 'geocoder'
 
