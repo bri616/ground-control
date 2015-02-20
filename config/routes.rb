@@ -14,10 +14,13 @@ Rails.application.routes.draw do
 
   get   "stats",                             to: "log_entries#show",             as: :stats
 
+  # routes for highcharts to live update
+  get   "recent_log_entries",                to: "log_entries#recent_log_entries"
 
   # API routes for pi to use
   get ":uid/state_settings",                to: "state_settings#state_settings"
   get ":uid/mission_settings",              to: "mission_settings#mission_settings"
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

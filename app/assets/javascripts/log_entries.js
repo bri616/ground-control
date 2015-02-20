@@ -16,15 +16,25 @@ $(document).ready(function () {
                     // set up the updating of the chart each second
                     var series = this.series[0];
                     setInterval(function () {
-                        var x = (new Date()).getTime(), // current time
-                            y = Math.random();
-                        series.addPoint([x, y], true, true);
-                    }, 5000);
+                      $.ajax("/recent_log_entries", {
+                        type: "GET",
+                        success: function(res) {
+                          console.log(res["time"])
+                          console.log((new Date()).getTime())
+                          var x = (new Date()).getTime(),
+                              y = res["count"];
+                          series.addPoint([x, y], true, true);
+                        },
+                        error: function(jqXHR, textStatus, errorThrown) {
+                          alert("ERROR!!");
+                        }
+                      });
+                    }, 1000);
                 }
             }
         },
         title: {
-            text: 'Live random data'
+            text: 'Live Mission Stats'
         },
         xAxis: {
             type: 'datetime',
@@ -54,9 +64,9 @@ $(document).ready(function () {
             enabled: false
         },
         series: [{
-            name: 'Random data',
+            name: 'Trigger data',
             data: (function () {
-                // generate an array of random data
+                // retrieve an array of the last 20 seconds of data
                 var data = [],
                     time = (new Date()).getTime(),
                     i;
@@ -64,7 +74,7 @@ $(document).ready(function () {
                 for (i = -19; i <= 0; i += 1) {
                     data.push({
                         x: time + i * 1000,
-                        y: Math.random()
+                        y: 0
                     });
                 }
                 return data;
