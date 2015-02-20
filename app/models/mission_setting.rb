@@ -1,4 +1,4 @@
 class MissionSetting < ActiveRecord::Base
   belongs_to :teleporter
-  has_one :sound_pattern
+  belongs_to :sound_pattern
 end
