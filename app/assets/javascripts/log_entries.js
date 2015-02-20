@@ -66,12 +66,12 @@ $(document).ready(function () {
         series: [{
             name: 'Trigger data',
             data: (function () {
-                // retrieve an array of the last 20 seconds of data
+                // retrieve an array of the last 120 seconds of data
                 var data = [],
                     time = (new Date()).getTime(),
                     i;
 
-                for (i = -19; i <= 0; i += 1) {
+                for (i = -119; i <= 0; i += 1) {
                     data.push({
                         x: time + i * 1000,
                         y: 0
