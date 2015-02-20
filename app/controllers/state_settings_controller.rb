@@ -28,7 +28,9 @@ class StateSettingsController < ApplicationController
 
   def state_settings
     teleporter = Teleporter.find_by(uid: params[:uid])
-    teleporter.log_entries.create(lights_on: teleporter.state_setting.lights_on, sound_on: teleporter.state_setting.sound_on, light_directive: teleporter.mission_setting.light_directive)
+    if teleporter.log_entries.length == 0 || teleporter.log_entries.last.created_at < 5.seconds.ago
+      teleporter.log_entries.create(lights_on: teleporter.state_setting.lights_on, sound_on: teleporter.state_setting.sound_on, light_directive: teleporter.mission_setting.light_directive)
+    end
     render json: {state_settings: teleporter.state_setting}
   end
 
