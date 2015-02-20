@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150219235844) do
+ActiveRecord::Schema.define(version: 20150220003934) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,15 +33,26 @@ ActiveRecord::Schema.define(version: 20150219235844) do
     t.datetime "updated_at"
   end
 
-  create_table "mission_settings_sounds", id: false, force: true do |t|
-    t.integer "mission_setting_id"
+  create_table "sound_patterns", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "sound_patterns_sounds", id: false, force: true do |t|
+    t.integer "sound_pattern_id"
     t.integer "sound_id"
   end
 
   create_table "sounds", force: true do |t|
-    t.string   "name"
+    t.string   "file_name"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "sounds_sound_patterns", id: false, force: true do |t|
+    t.integer "sound_id"
+    t.integer "sound_pattern_id"
   end
 
   create_table "state_settings", force: true do |t|
