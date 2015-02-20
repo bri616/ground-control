@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150213002759) do
+ActiveRecord::Schema.define(version: 20150219235844) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,17 @@ ActiveRecord::Schema.define(version: 20150213002759) do
     t.string   "light_directive"
     t.string   "sound_directive"
     t.integer  "teleporter_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "mission_settings_sounds", id: false, force: true do |t|
+    t.integer "mission_setting_id"
+    t.integer "sound_id"
+  end
+
+  create_table "sounds", force: true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
