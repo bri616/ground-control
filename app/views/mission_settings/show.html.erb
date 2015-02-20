@@ -1,11 +1,38 @@
-<%= @current_user.rank %>
-<p>
-  <%= @current_teleporter.name %>
-</p>
-<p>
-  <%= @mission_setting.light_directive %>
-</p>
-<%= form_for @mission_setting do |f| %>
-  <%= f.select :light_directive, options_for_select(@light_directive_list, @mission_setting.light_directive)%>
-  <%= f.submit "Update" %>
-<% end %>
+
+<div class="row">
+
+  <div class="col-md-5" id="light-directives-container">
+    <h2>Destination Coordinates<p><small>(light pattern)</small></p></h2>
+
+    <div class="row">
+
+      <div class="buttons-well">
+        <% @light_directive_list.each do |light_directive| %>
+          <%= button_to light_directive.titlecase, mission_setting_path, params: { light_directive: light_directive }, class: "btn btn-default col-md-6 col-xs-12", id: "#{"current-light-directive" if light_directive == @mission_setting.light_directive}" %>
+        <% end %>
+      </div>
+
+    </div><!-- /row -->
+
+  </div>
+
+  <div class="col-md-2">
+  </div>
+
+  <div class="col-md-5" id="light-directives-container">
+    <h2>Route<p><small>(sound pattern)</small></p></h2>
+
+    <div class="row">
+
+      <div class="buttons-well">
+        <% @sound_directive_list.each do |sound_directive| %>
+          <%= button_to sound_directive, mission_setting_path, params: { sound_directive: sound_directive }, class: "btn btn-default col-md-6 col-xs-12", id: "#{"current-sound-directive" if sound_directive == @mission_setting.sound_directive}" %>
+        <% end %>
+      </div>
+
+    </div><!-- /row -->
+
+  </div>
+
+
+</div> <!-- /row -->

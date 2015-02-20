@@ -1,9 +1,9 @@
 class MissionSettingsController < ApplicationController
-  before_filter :current_mission_setting, :light_directive_list
+  before_filter :current_mission_setting, :light_directive_list, :sound_directive_list
   skip_before_filter :logged_in, :current_teleporter, :current_mission_setting, :light_directive_list, only: [:mission_settings]
 
   def update
-    light_params = params.require(:mission_setting).permit(:light_directive)
+    light_params = params.permit(:light_directive)
     @mission_setting.update(light_params)
     # sound_params = params.require(:mission_setting).permit(:sound_pattern)
     # @mission_setting.sound_pattern = SoundPattern.find_by(sound_params)
@@ -22,6 +22,10 @@ class MissionSettingsController < ApplicationController
   end
 
   def light_directive_list
-    @light_directive_list = ["oz", "mars", "batcave", "seattle", "caprica"]
+    @light_directive_list = ["oz", "mars", "batcave", "seattle", "caprica", "camazotz"]
+  end
+
+  def sound_directive_list
+    @sound_directive_list = SoundPattern.all.collect(&:name)
   end
 end

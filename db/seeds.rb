@@ -18,12 +18,20 @@ sound_list.each do |sound|
   Sound.create(file_name: sound)
 end
 
-SoundPattern.create(name: "greenwoodave").sounds << Sound.find_by(file_name: "teleport1")
-SoundPattern.find_by(name: "greenwoodave").sounds << Sound.find_by(file_name: "teleport2")
-SoundPattern.find_by(name: "greenwoodave").sounds << Sound.find_by(file_name: "teleport3")
-SoundPattern.find_by(name: "greenwoodave").sounds << Sound.find_by(file_name: "zap1")
+SoundPattern.create(name: "Greenwood Ave").sounds << Sound.find_by(file_name: "teleport1")
+SoundPattern.find_by(name: "Greenwood Ave").sounds << Sound.find_by(file_name: "teleport2")
+SoundPattern.find_by(name: "Greenwood Ave").sounds << Sound.find_by(file_name: "teleport3")
+SoundPattern.find_by(name: "Greenwood Ave").sounds << Sound.find_by(file_name: "zap1")
 
-SoundPattern.create(name: "ftljump").sounds << Sound.find_by(file_name: "caprica")
+SoundPattern.create(name: "FTL Jump").sounds << Sound.find_by(file_name: "caprica")
+
+SoundPattern.create(name: "Corellian Run").sounds << Sound.find_by(file_name: "teleport2")
+
+SoundPattern.create(name: "Yellow Brick Road").sounds << Sound.find_by(file_name: "teleport3")
+
+SoundPattern.create(name: "Tesseract").sounds << Sound.find_by(file_name: "zap1")
+
+SoundPattern.create(name: "Milky Way").sounds << Sound.find_by(file_name: "teleport1")
 
 
 dev_teleporter = Teleporter.create(name:"bfi-dev", uid:"826dev", description:"Development version of BFI Teleporter")
