@@ -1,6 +1,6 @@
 class MissionSettingsController < ApplicationController
   before_filter :current_mission_setting, :light_directive_list, :sound_directive_list
-  skip_before_filter :logged_in, :current_teleporter, :current_mission_setting, :light_directive_list, only: [:mission_settings]
+  skip_before_filter :logged_in, :current_teleporter, :current_mission_setting, :light_directive_list, only: [:mission_settings, :current_sound_pattern]
 
   def update
     light_params = params.permit(:light_directive)
@@ -15,7 +15,10 @@ class MissionSettingsController < ApplicationController
     render json: {mission_settings: teleporter.mission_setting}
   end
 
-
+  def current_sound_pattern
+    teleporter = Teleporter.find_by(uid: params[:uid])
+    render json: {mission_settings: teleporter.mission_setting}
+  end
 
   private
 

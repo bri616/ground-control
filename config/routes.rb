@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   # API routes for pi to use
   get ":uid/state_settings",                to: "state_settings#state_settings"
   get ":uid/mission_settings",              to: "mission_settings#mission_settings"
+  get ":uid/sound_pattern",                 to: "mission_settings#current_sound_pattern"
 
 
   # The priority is based upon order of creation: first created -> highest priority.
