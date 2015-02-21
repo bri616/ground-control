@@ -3,7 +3,7 @@ class Teleporter < ActiveRecord::Base
   has_one :state_setting
   has_one :mission_setting
   has_many :log_entries
-  
+
 
   def pattern_list
     log_entries.collect { |log_entry| log_entry.light_directive}.uniq
@@ -23,6 +23,10 @@ class Teleporter < ActiveRecord::Base
 
   def missions_per_minute
     log_entries.group_by_minute(:created_at).count
+  end
+
+  def sound_pattern_array
+    mission_setting.sound_pattern.sounds.collect(&:file_name)
   end
 
 end
