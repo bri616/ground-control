@@ -19,5 +19,9 @@ class Teleporter < ActiveRecord::Base
   def successful_missions_per_hour
     log_entries.where(lights_on: true).group_by_hour(:created_at).count
   end
-  
+
+  def missions_per_minute
+    log_entries.group_by_minute(:created_at).count
+  end
+
 end

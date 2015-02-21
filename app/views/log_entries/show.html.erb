@@ -1,5 +1,9 @@
-<h2>All Missions<h2>
+<h2>All Missions per hour<h2>
 <%= line_chart @current_teleporter.missions_per_hour %>
+
+<h2>All Missions per minute<h2>
+<%= line_chart @current_teleporter.missions_per_minute %>
+
 <h2>Successful Missions<small>(lights on)</small></h2>
 <%= line_chart @current_teleporter.successful_missions_per_hour %>
 
