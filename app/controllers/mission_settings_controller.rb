@@ -15,6 +15,8 @@ class MissionSettingsController < ApplicationController
     render json: {mission_settings: teleporter.mission_setting}
   end
 
+
+
   private
 
   def current_mission_setting
@@ -22,7 +24,7 @@ class MissionSettingsController < ApplicationController
   end
 
   def light_directive_list
-    @light_directive_list = ["oz", "mars", "batcave", "seattle", "caprica", "camazotz"]
+    @light_directive_list = ["oz", "tatooine", "batcave", "seattle", "caprica", "camazotz"]
   end
 
   def sound_directive_list
