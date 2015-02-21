@@ -12,7 +12,8 @@ Rails.application.routes.draw do
   patch "mission_control",                   to: "mission_settings#update"
   put   "mission_control",                   to: "mission_settings#update"
 
-  get   "stats",                             to: "log_entries#show",             as: :stats
+  get   "stats",                             to: "log_entries#show",             as: :log_entry
+  get   "log_entries",                       to: "log_entries#index",            as: :log_entries
 
   # routes for highcharts to live update
   get   "recent_log_entries",                to: "log_entries#recent_log_entries"
