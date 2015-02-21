@@ -9,12 +9,17 @@ RSpec.describe MissionSettingsController, :type => :controller do
   describe "#current_sound_pattern" do
     it 'returns something' do
       get :current_sound_pattern, :uid => '826dev'
-      expect(response).to_not be_nil
+      expect(response.body).to_not be_nil
     end
 
     it 'response status is 200' do
       get :current_sound_pattern, :uid => '826dev'
       expect(response.status).to eq 200
+    end
+
+    it 'returns an array of strings in the json' do
+      get :current_sound_pattern, :uid => '826dev'
+      expect(JSON.parse(response.body)["sound_pattern"].class).to eq Array
     end
   end
 

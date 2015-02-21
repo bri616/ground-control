@@ -17,7 +17,7 @@ class MissionSettingsController < ApplicationController
 
   def current_sound_pattern
     teleporter = Teleporter.find_by(uid: params[:uid])
-    render json: {mission_settings: teleporter.mission_setting}
+    render json: {sound_pattern: teleporter.mission_setting.sound_pattern.sounds.collect(&:file_name)}
   end
 
   private
