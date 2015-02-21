@@ -8,7 +8,7 @@
 
       <div class="buttons-well">
         <% @light_directive_list.each do |light_directive| %>
-          <%= button_to light_directive.titlecase, mission_setting_path, params: { light_directive: light_directive }, class: "btn btn-default col-md-6 col-xs-12", id: "#{"current-light-directive" if light_directive == @mission_setting.light_directive}" %>
+          <%= button_to light_directive.titlecase, mission_setting_path, params: { light_directive: light_directive, sound_pattern_id: @mission_setting.sound_pattern.id }, class: "btn btn-default col-md-6 col-xs-12", id: "#{"current-light-directive" if light_directive == @mission_setting.light_directive}" %>
         <% end %>
       </div>
 
@@ -26,7 +26,7 @@
 
       <div class="buttons-well">
         <% @sound_directive_list.each do |sound_directive| %>
-          <%= button_to sound_directive, mission_setting_path, params: { sound_directive: sound_directive }, class: "btn btn-default col-md-6 col-xs-12", id: "#{"current-sound-directive" if sound_directive == @mission_setting.sound_directive}" %>
+          <%= button_to sound_directive, mission_setting_path, params: { sound_pattern_id: SoundPattern.find_by(name: sound_directive).id, light_directive: @mission_setting.light_directive }, class: "btn btn-default col-md-6 col-xs-12", id: "#{"current-sound-pattern" if sound_directive == @mission_setting.sound_pattern.name}" %>
         <% end %>
       </div>
 

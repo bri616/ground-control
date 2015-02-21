@@ -12,7 +12,6 @@ StateSetting.destroy_all
 MissionSetting.destroy_all
 SoundPattern.destroy_all
 Sound.destroy_all
-LogEntry.destroy_all
 
 sound_list = ["teleport1", "teleport2", "teleport3", "zap1", "caprica", "aliens1", "tesseract", "ftljump"]
 

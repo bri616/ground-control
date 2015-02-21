@@ -3,10 +3,8 @@ class MissionSettingsController < ApplicationController
   skip_before_filter :logged_in, :current_teleporter, :current_mission_setting, :light_directive_list, only: [:mission_settings, :current_sound_pattern]
 
   def update
-    light_params = params.permit(:light_directive)
-    @mission_setting.update(light_params)
-    # sound_params = params.require(:mission_setting).permit(:sound_pattern)
-    # @mission_setting.sound_pattern = SoundPattern.find_by(sound_params)
+    mission_params = params.permit(:light_directive, :sound_pattern_id)
+    @mission_setting.update(mission_params)
     render :show
   end
 
