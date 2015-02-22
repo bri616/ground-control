@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   root  "state_settings#show"
   post  ":uid/state_settings/toggle_lights", to: 'state_settings#toggle_lights', as: :toggle_lights
   post  ":uid/state_settings/toggle_sound",  to: 'state_settings#toggle_sound',  as: :toggle_sound
-  get   "/lift_off",                         to: "state_settings#landing",       as: :landing_page
-  post  "/lift_off/auth",                    to: "users#authenticate",           as: :authenticate_user
+  get   "lift_off",                          to: "state_settings#landing",       as: :landing_page
+  post  "lift_off/auth",                     to: "users#authenticate",           as: :authenticate_user
 
   get   "mission_control",                   to: "mission_settings#show",        as: :mission_setting
   get   "state_control",                     to: "state_settings#show",          as: :state_setting
@@ -13,15 +13,17 @@ Rails.application.routes.draw do
   put   "mission_control",                   to: "mission_settings#update"
 
   get   "stats",                             to: "log_entries#show",             as: :log_entry
-  get   "log_entries",                       to: "log_entries#index",            as: :log_entries
+
+  get   "about",                             to: "pages#about",                  as: :about
+
 
   # routes for highcharts to live update
   get   "recent_log_entries",                to: "log_entries#recent_log_entries"
 
   # API routes for pi to use
-  get ":uid/state_settings",                to: "state_settings#state_settings"
-  get ":uid/mission_settings",              to: "mission_settings#mission_settings"
-  get ":uid/sound_pattern",                 to: "mission_settings#current_sound_pattern"
+  get ":uid/state_settings",                 to: "state_settings#state_settings"
+  get ":uid/mission_settings",               to: "mission_settings#mission_settings"
+  get ":uid/sound_pattern",                  to: "mission_settings#current_sound_pattern"
 
 
   # The priority is based upon order of creation: first created -> highest priority.

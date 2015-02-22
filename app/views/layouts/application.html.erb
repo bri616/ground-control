@@ -25,10 +25,10 @@
       </div>
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav navbar-right">
-          <li class="active"> <%= link_to "State Ctrl", state_setting_path %></li>
-          <li> <%= link_to "Mission Ctrl", mission_setting_path %></li>
-          <li> <%= link_to "Stats", log_entry_path %></li>
-          <li><a href="#contact">Your Account</a></li>
+          <li class="<%= is_active?(state_setting_path) %>"> <%= link_to "State Ctrl", state_setting_path %></li>
+          <li class="<%= is_active?(mission_setting_path) %>"> <%= link_to "Mission Ctrl", mission_setting_path %></li>
+          <li class="<%= is_active?(log_entry_path) %>"> <%= link_to "Stats", log_entry_path %></li>
+          <li class="<%= is_active?(about_path) %>"><%= link_to "About", about_path %></li>
         </ul>
       </div><!--/.nav-collapse -->
     </div>
