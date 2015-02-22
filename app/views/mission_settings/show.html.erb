@@ -12,11 +12,11 @@
           <style type="text/css">
           .btn-<%= @image_name %> {
             background: url(<%= asset_path @image_name+'.png' %>) no-repeat;
-            background-position: top;
+            background-position: center 5px;
             background-color: lightgray;
           }
           </style>
-          <%= button_to light_directive.titlecase, mission_setting_path, params: { light_directive: light_directive, sound_pattern_id: @mission_setting.sound_pattern.id },  class: "btn btn-default col-md-4 col-xs-12 btn-with-image btn-#{@image_name}", id: "#{"current-light-directive" if light_directive == @mission_setting.light_directive}" %>
+          <%= button_to light_directive.titlecase, mission_setting_path, params: { light_directive: light_directive, sound_pattern_id: @mission_setting.sound_pattern.id },  class: "btn btn-default col-sm-4 col-xs-12 btn-with-image btn-#{@image_name}", id: "#{"current-light-directive" if light_directive == @mission_setting.light_directive}" %>
         <% end %>
       </div>
 
@@ -35,11 +35,11 @@
           <style type="text/css">
           .btn-<%= @image_name %> {
             background: url(<%= asset_path @image_name+'.png' %>) no-repeat;
-            background-position: top;
+            background-position: center 5px;
             background-color: lightgray;
           }
           </style>
-          <%= button_to sound_directive, mission_setting_path, params: { sound_pattern_id: SoundPattern.find_by(name: sound_directive).id, light_directive: @mission_setting.light_directive }, class: "btn btn-default col-md-4 col-xs-12 btn-with-image btn-#{@image_name}", id: "#{"current-sound-pattern" if sound_directive == @mission_setting.sound_pattern.name}" %>
+          <%= button_to sound_directive, mission_setting_path, params: { sound_pattern_id: SoundPattern.find_by(name: sound_directive).id, light_directive: @mission_setting.light_directive }, class: "btn btn-default col-sm-4 col-xs-12 btn-with-image btn-#{@image_name}", id: "#{"current-sound-pattern" if sound_directive == @mission_setting.sound_pattern.name}" %>
         <% end %>
       </div>
 
