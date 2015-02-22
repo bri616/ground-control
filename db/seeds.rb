@@ -13,7 +13,7 @@ MissionSetting.destroy_all
 SoundPattern.destroy_all
 Sound.destroy_all
 
-sound_list = ["teleport1", "teleport2", "teleport3", "zap1", "caprica", "aliens1", "tesseract", "ftljump"]
+sound_list = ["teleport1", "teleport2", "teleport3", "zap1", "caprica", "aliens1", "tesseract", "ftljump", "witch"]
 
 sound_list.each do |sound|
   Sound.create(file_name: sound)

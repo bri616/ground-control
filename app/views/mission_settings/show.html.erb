@@ -1,14 +1,22 @@
 
 <div class="row">
 
-  <div class="col-md-5" id="light-directives-container">
+  <div class="col-md-6" id="light-directives-container">
     <h2>Destination Coordinates<p><small>(light pattern)</small></p></h2>
 
     <div class="row">
 
       <div class="buttons-well">
         <% @light_directive_list.each do |light_directive| %>
-          <%= button_to light_directive.titlecase, mission_setting_path, params: { light_directive: light_directive, sound_pattern_id: @mission_setting.sound_pattern.id }, class: "btn btn-default col-md-6 col-xs-12", id: "#{"current-light-directive" if light_directive == @mission_setting.light_directive}" %>
+          <% @image_name = light_directive.titlecase.delete(" ").underscore %>
+          <style type="text/css">
+          .btn-<%= @image_name %> {
+            background: url(<%= asset_path @image_name+'.png' %>) no-repeat;
+            background-position: top;
+            background-color: lightgray;
+          }
+          </style>
+          <%= button_to light_directive.titlecase, mission_setting_path, params: { light_directive: light_directive, sound_pattern_id: @mission_setting.sound_pattern.id },  class: "btn btn-default col-md-4 col-xs-12 btn-with-image btn-#{@image_name}", id: "#{"current-light-directive" if light_directive == @mission_setting.light_directive}" %>
         <% end %>
       </div>
 
@@ -16,17 +24,22 @@
 
   </div>
 
-  <div class="col-md-2">
-  </div>
-
-  <div class="col-md-5" id="light-directives-container">
+  <div class="col-md-6" id="light-directives-container">
     <h2>Route<p><small>(sound pattern)</small></p></h2>
 
     <div class="row">
 
       <div class="buttons-well">
         <% @sound_directive_list.each do |sound_directive| %>
-          <%= button_to sound_directive, mission_setting_path, params: { sound_pattern_id: SoundPattern.find_by(name: sound_directive).id, light_directive: @mission_setting.light_directive }, class: "btn btn-default col-md-6 col-xs-12", id: "#{"current-sound-pattern" if sound_directive == @mission_setting.sound_pattern.name}" %>
+        <% @image_name = sound_directive.delete(" ").underscore %>
+          <style type="text/css">
+          .btn-<%= @image_name %> {
+            background: url(<%= asset_path @image_name+'.png' %>) no-repeat;
+            background-position: top;
+            background-color: lightgray;
+          }
+          </style>
+          <%= button_to sound_directive, mission_setting_path, params: { sound_pattern_id: SoundPattern.find_by(name: sound_directive).id, light_directive: @mission_setting.light_directive }, class: "btn btn-default col-md-4 col-xs-12 btn-with-image btn-#{@image_name}", id: "#{"current-sound-pattern" if sound_directive == @mission_setting.sound_pattern.name}" %>
         <% end %>
       </div>
 

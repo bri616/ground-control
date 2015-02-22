@@ -2,10 +2,29 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#current-light-directive{
-  background: lightblue;
+#current-light-directive {
+  background-color: white;
 }
 
-#current-sound-pattern{
-  background: lightblue;
+#current-sound-pattern {
+  background-color: white;
 }
+
+.buttons-well {
+  margin: 10px;
+}
+
+.btn-with-image {
+  height: 170px;
+  line-height: 50px;
+  padding-top: 130px;
+  font-size: 14pt;
+  font-weight: bold;
+  color: gray;
+}
+//
+// .btn-rainbow {
+//   background: image-url('rainbow.png') no-repeat;
+//   background-position: top;
+//   background-color: lightgray;
+// }
