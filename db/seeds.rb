@@ -12,7 +12,7 @@ StateSetting.destroy_all
 MissionSetting.destroy_all
 SoundPattern.destroy_all
 Sound.destroy_all
-LightDirective.destory_all
+LightDirective.destroy_all
 
 sound_list = ["teleport1", "teleport2", "teleport3", "zap1", "caprica", "aliens1", "tesseract", "ftljump", "witch"]
 
@@ -44,8 +44,8 @@ SoundPattern.create(name: "Milky Way").sounds << Sound.find_by(file_name: "telep
 dev_teleporter.create_user(rank: "Admiral", recovery_email: "bridotson@gmail.com", password: "test", password_confirmation: "test")
 
 LightDirective.create(name: "oz", icon_creator_name:"IlMostro", icon_url: "http://thenounproject.com/term/rainbow/5510/")
-LightDirective.create(name: "", icon_creator_name:"IlMostro", icon_url: "http://thenounproject.com/term/rainbow/5510/")
-LightDirective.create(name: "oz", icon_creator_name:"IlMostro", icon_url: "http://thenounproject.com/term/rainbow/5510/")
-LightDirective.create(name: "oz", icon_creator_name:"IlMostro", icon_url: "http://thenounproject.com/term/rainbow/5510/")
-LightDirective.create(name: "oz", icon_creator_name:"IlMostro", icon_url: "http://thenounproject.com/term/rainbow/5510/")
-LightDirective.create(name: "oz", icon_creator_name:"IlMostro", icon_url: "http://thenounproject.com/term/rainbow/5510/")
+# LightDirective.create(name: "tatooine", icon_creator_name:"IlMostro", icon_url: "http://thenounproject.com/term/rainbow/5510/")
+# LightDirective.create(name: "oz", icon_creator_name:"IlMostro", icon_url: "http://thenounproject.com/term/rainbow/5510/")
+# LightDirective.create(name: "oz", icon_creator_name:"IlMostro", icon_url: "http://thenounproject.com/term/rainbow/5510/")
+# LightDirective.create(name: "oz", icon_creator_name:"IlMostro", icon_url: "http://thenounproject.com/term/rainbow/5510/")
+# LightDirective.create(name: "oz", icon_creator_name:"IlMostro", icon_url: "http://thenounproject.com/term/rainbow/5510/")

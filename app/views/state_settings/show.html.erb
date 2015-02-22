@@ -25,12 +25,15 @@
     <%= button_to "", toggle_sound_path(@current_teleporter.uid), class: @sound_on ? "btn-toggle-sound btn-turn-off-sound" : "btn-toggle-sound btn-turn-on-sound"  %>
   </div><!-- /sound switch -->
   <div class="col-md-4 reboot-button">
-    <div class="text-center">
-      Reboot button
+    <div class="text-center power-status">
+      The machine is currently set to
+      <span class="<%= @power_off ? 'power-off' : 'power-on' %>">
+        <%= @power_off ? 'POWER DOWN' : 'REMAIN RUNNING'  %>
+      </span>
       <p>
-        Not yet implemented
+        Toggle this status below:
       </p>
-      <button class="btn-reboot-button"></button>
+      <%= button_to "", toggle_power_off_path(@current_teleporter.uid), class: @power_off ? "btn-toggle-power-off btn-turn-off-power" : "btn-toggle-power-off btn-turn-on-power"  %>
     </div>
   </div>
 </div> <!-- /row -->

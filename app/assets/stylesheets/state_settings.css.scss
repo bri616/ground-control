@@ -54,11 +54,28 @@
   font-weight: bold;
 }
 
-.btn-reboot-button {
-  background: image-url('inactive-reboot.png') no-repeat;
+.btn-toggle-power-off {
   cursor: default;
   width: 238px;
   height: 337px;
   border: none;
   outline: none;
+}
+
+.power-on {
+  color: #2E5339;
+  font-weight: bold;
+}
+
+.power-off {
+  color: #F72C25;
+  font-weight: bold;
+}
+
+.btn-turn-off-power {
+  background: image-url('active-poweroff.png') no-repeat;
+}
+
+.btn-turn-on-power {
+  background: image-url('inactive-reboot.png') no-repeat;
 }

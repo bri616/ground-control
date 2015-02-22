@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root  "state_settings#show"
   post  ":uid/state_settings/toggle_lights", to: 'state_settings#toggle_lights', as: :toggle_lights
   post  ":uid/state_settings/toggle_sound",  to: 'state_settings#toggle_sound',  as: :toggle_sound
+  post  ":uid/state_settings/toggle_power_off",  to: 'state_settings#toggle_power_off',  as: :toggle_power_off
   get   "lift_off",                          to: "state_settings#landing",       as: :landing_page
   post  "lift_off/auth",                     to: "users#authenticate",           as: :authenticate_user
 

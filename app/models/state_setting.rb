@@ -8,4 +8,9 @@ class StateSetting < ActiveRecord::Base
   def toggle_sound
     update(sound_on: !sound_on)
   end
+
+  def toggle_power_off
+    update(power_off: !power_off)
+  end
+
 end

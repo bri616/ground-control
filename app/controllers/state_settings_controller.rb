@@ -12,6 +12,7 @@ class StateSettingsController < ApplicationController
   def show
     @lights_on = current_teleporter.state_setting.lights_on
     @sound_on = current_teleporter.state_setting.sound_on
+    @power_off = current_teleporter.state_setting.power_off
   end
 
   def toggle_lights
@@ -23,8 +24,15 @@ class StateSettingsController < ApplicationController
   def toggle_sound
     current_teleporter.state_setting.toggle_sound
     @sound_on = current_teleporter.state_setting.sound_on
-    render json: { lights_on: @sound_on }
+    render json: { sound_on: @sound_on }
   end
+
+  def toggle_power_off
+    current_teleporter.state_setting.toggle_power_off
+    @power_off = current_teleporter.state_setting.power_off
+    render json: { power_off: @power_off }
+  end
+
 
   def state_settings
     teleporter = Teleporter.find_by(uid: params[:uid])
