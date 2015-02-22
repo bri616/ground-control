@@ -35,7 +35,7 @@ SoundPattern.create(name: "FTL Jump").sounds << Sound.find_by(file_name: "ftljum
 
 SoundPattern.create(name: "Corellian Run").sounds << Sound.find_by(file_name: "aliens1")
 
-SoundPattern.create(name: "Yellow Brick Road").sounds << Sound.find_by(file_name: "teleport3")
+SoundPattern.create(name: "Yellow Brick Road").sounds << Sound.find_by(file_name: "witch")
 
 SoundPattern.find_by(name: "Tesseract").sounds << Sound.find_by(file_name: "tesseract")
 
