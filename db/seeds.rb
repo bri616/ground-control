@@ -44,8 +44,8 @@ SoundPattern.create(name: "Milky Way").sounds << Sound.find_by(file_name: "telep
 dev_teleporter.create_user(rank: "Admiral", recovery_email: "bridotson@gmail.com", password: "test", password_confirmation: "test")
 
 LightDirective.create(name: "oz", icon_creator_name:"IlMostro", icon_url: "http://thenounproject.com/term/rainbow/5510/")
-# LightDirective.create(name: "tatooine", icon_creator_name:"IlMostro", icon_url: "http://thenounproject.com/term/rainbow/5510/")
-# LightDirective.create(name: "oz", icon_creator_name:"IlMostro", icon_url: "http://thenounproject.com/term/rainbow/5510/")
-# LightDirective.create(name: "oz", icon_creator_name:"IlMostro", icon_url: "http://thenounproject.com/term/rainbow/5510/")
-# LightDirective.create(name: "oz", icon_creator_name:"IlMostro", icon_url: "http://thenounproject.com/term/rainbow/5510/")
-# LightDirective.create(name: "oz", icon_creator_name:"IlMostro", icon_url: "http://thenounproject.com/term/rainbow/5510/")
+LightDirective.create(name: "tatooine", icon_creator_name:"Yorlmar Campos", icon_url: "http://thenounproject.com/term/c3po/37513/")
+LightDirective.create(name: "batcave", icon_creator_name:"iconsmind.com", icon_url: "http://thenounproject.com/term/mask/73208/")
+LightDirective.create(name: "seattle", icon_creator_name:"Kelly Hamilton", icon_url: "http://thenounproject.com/term/space-needle/8661/")
+LightDirective.create(name: "caprica", icon_creator_name:"Luiza Peixe", icon_url: "http://thenounproject.com/term/toaster/10764/")
+LightDirective.create(name: "camazotz", icon_creator_name:"James Christopher", icon_url: "http://thenounproject.com/term/atom/40582/")

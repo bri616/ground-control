@@ -19,6 +19,7 @@
     </div>
   </div><!-- /row -->
   <div class ="row">
+    <h3>Icons</h3>
     <div class="table-responsive">
       <table class="table table-hover">
         <tr>
@@ -29,14 +30,16 @@
             Two
           </th>
         </tr>
+        <% @light_directives.each do |light_directive| %>
         <tr>
           <td>
-            Picture
+            <%= image_tag(light_directive.name+".png") %>
           </td>
           <td>
-            Link
+            Created by: <%= link_to light_directive.icon_creator_name, light_directive.icon_url %>
           </td>
         </tr>
+        <% end %>
       </table>
     </div>
   </div><!-- /row -->
