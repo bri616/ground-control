@@ -26,7 +26,7 @@ $(document).ready(function () {
                           series.addPoint([x, y], true, true);
                         },
                         error: function(jqXHR, textStatus, errorThrown) {
-                          alert("ERROR!!");
+                          console.log("ERROR!!");
                         }
                       });
                     }, 1000);
