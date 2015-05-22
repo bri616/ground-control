@@ -13,6 +13,10 @@ class StateSettingsController < ApplicationController
     @lights_on = current_teleporter.state_setting.lights_on
     @sound_on = current_teleporter.state_setting.sound_on
     @power_off = current_teleporter.state_setting.power_off
+    puts User.find(session[:user_id]).rank
+    if User.find(session[:user_id]).rank != "Admiral"
+      redirect_to mission_setting_path
+    end
   end
 
   def toggle_lights
