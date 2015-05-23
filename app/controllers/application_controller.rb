@@ -16,7 +16,8 @@ class ApplicationController < ActionController::Base
   end
 
   def current_teleporter
-    @current_teleporter ||= @current_user.teleporter
+    # TODO: fix associations between teleporters and users for case of multiples
+    @current_teleporter ||= Teleporter.first
   end
 
 end
