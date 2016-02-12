@@ -14,6 +14,10 @@
   margin: 10px;
 }
 
+.random-button {
+  margin: 10px;
+}
+
 .btn-with-image {
   height: 180px;
   line-height: 50px;
@@ -22,9 +26,7 @@
   font-weight: bold;
   color: gray;
 }
-//
-// .btn-rainbow {
-//   background: image-url('rainbow.png') no-repeat;
-//   background-position: top;
-//   background-color: lightgray;
-// }
+
+.btn-random {
+  width: 100%;
+}

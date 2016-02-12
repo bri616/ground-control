@@ -7,6 +7,8 @@
     <div class="row">
 
       <div class="buttons-well">
+        <%= button_to "RANDOM", mission_setting_path, params: { light_directive: "random", sound_pattern_id: @mission_setting.sound_pattern.id },  class: "btn btn-danger col-xs-12 btn-random" %>
+
         <% @light_directive_list.each do |light_directive| %>
           <% @image_name = light_directive.titlecase.delete(" ").underscore %>
           <style type="text/css">
@@ -24,12 +26,13 @@
 
   </div>
 
-  <div class="col-md-6" id="light-directives-container">
+  <div class="col-md-6" id="sound-directives-container">
     <h2>Route<p><small>(sound pattern)</small></p></h2>
 
     <div class="row">
 
       <div class="buttons-well">
+        <%= button_to "RANDOM", mission_setting_path, params: { sound_pattern_id: SoundPattern.all.collect(&:id).sample, light_directive: @mission_setting.light_directive },  class: "btn btn-danger col-xs-12 btn-random" %>
         <% @sound_directive_list.each do |sound_directive| %>
         <% @image_name = sound_directive.delete(" ").underscore %>
           <style type="text/css">

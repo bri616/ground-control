@@ -4,6 +4,9 @@ class MissionSettingsController < ApplicationController
 
   def update
     mission_params = params.permit(:light_directive, :sound_pattern_id)
+    if mission_params[:light_directive] == "random"
+        mission_params[:light_directive] = LightDirective.all.map(&:name).sample
+    end
     @mission_setting.update(mission_params)
     render :show
   end
